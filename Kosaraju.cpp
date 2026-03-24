@@ -17,7 +17,7 @@ int main()
     graph.push_back({ }); // 3
     graph.push_back({ 5 }); // 4
     graph.push_back({ 6 }); // 5
-    graph.push_back({ }); // 6
+    graph.push_back({ 4 }); // 6
  
     Kosaraju(graph.size(), graph);
  
@@ -64,9 +64,12 @@ void BFS(vector<bool>& visited, vector<vector<int>> graph, int cur, stack<int>& 
         return;
     
     visited[cur] = true;
-    s.push(cur);
     for (auto next : graph[cur])
+    {
+        s.push(next);
         BFS(visited, graph, next, s);
+    }
+    s.push(cur);
 }
 
 void ReverseBFS(vector<bool>& visited, vector<vector<int>> graph, int idx, int cur, vector<vector<int>>& result)
