@@ -91,7 +91,7 @@ void ReverseBFS(vector<bool>& visited, vector<vector<int>> graph, int idx, int c
  1--2  3
 
     4
-   /
-  5--6
+   / \
+  5---6
 
 */
